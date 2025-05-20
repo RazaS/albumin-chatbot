@@ -7,7 +7,7 @@ from dotenv import load_dotenv  # ✅ This was missing
 
 
 # === CONFIG ===
-INDEX_NAME = "guideline-rag"
+INDEX_NAME = "albumin-guideline-rag"
 
 load_dotenv()  # Load variables from .env
 
@@ -18,7 +18,7 @@ PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index(INDEX_NAME)
-embedder = SentenceTransformer("intfloat/e5-base")
+embedder = SentenceTransformer("intfloat/e5-small-v2")
 
 # === Flask UI ===
 from flask import session
